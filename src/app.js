@@ -53,6 +53,6 @@ window.onload = function() {
   let element = document.getElementById("generator");
   element.innerHTML = generator;
 
-  let elementTwo = document.getElementById("warning");
-  elementTwo.textContent = `${warning.length} combinaciones posibles`;
+  // let elementTwo = document.getElementById("warning");
+  // elementTwo.textContent = `${warning.length} combinaciones posibles`;
 };
