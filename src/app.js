@@ -13,46 +13,23 @@ window.onload = function() {
   let noun = ["jogger", "racoon"];
   let ext = [".com", ".net", ".us", ".io"];
 
-  let randomWords = array => {
-    return Math.floor(Math.random() * array.length);
-  };
-
-  let pronounRandom = [];
-  let adjRandom = [];
-  let nounRandom = [];
-  let extRandom = [];
   let generator = [];
-  const warning = [];
+  let newGenerator = [];
 
   for (let i = 0; i < pronoun.length; i++) {
     for (let j = 0; j < adj.length; j++) {
       for (let k = 0; k < noun.length; k++) {
         for (let l = 0; l < ext.length; l++) {
-          pronounRandom = randomWords(pronoun);
-          adjRandom = randomWords(adj);
-          nounRandom = randomWords(noun);
-          extRandom = randomWords(ext);
-          generator = [
-            pronoun[pronounRandom] +
-              adj[adjRandom] +
-              noun[nounRandom] +
-              ext[extRandom]
-          ];
-          console.log(generator);
-          warning.push([
-            pronoun[pronounRandom] +
-              adj[adjRandom] +
-              noun[nounRandom] +
-              ext[extRandom]
-          ]);
+          generator.push(pronoun[i] + adj[j] + noun[k] + ext[l]);
         }
       }
     }
   }
+  newGenerator = generator[Math.floor(Math.random() * 32)];
 
   let element = document.getElementById("generator");
-  element.innerHTML = generator;
+  element.innerHTML = newGenerator;
 
-  // let elementTwo = document.getElementById("warning");
-  // elementTwo.textContent = `${warning.length} combinaciones posibles`;
+  let elementTwo = document.getElementById("warning");
+  elementTwo.textContent = `${generator.length} combinaciones posibles`;
 };
